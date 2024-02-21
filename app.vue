@@ -1,3 +1,4 @@
+
 <template>
   <NuxtLayout>
     <NuxtPage />
@@ -10,13 +11,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <NuxtLink to="/" class="nav-link">Home</NuxtLink>
+                <NuxtLink to="./pages/HomeView.vue" class="nav-link">Home</NuxtLink>
               </li>
               <li class="nav-item">
-                <NuxtLink to="/about" class="nav-link">About</NuxtLink>
+                <NuxtLink to="./pages/AboutView.vue" class="nav-link">About</NuxtLink>
               </li>
               <li class="nav-item">
-                <NuxtLink to="/info" class="nav-link">Info</NuxtLink>
+                <NuxtLink to="./pages/InfoView.vue" class="nav-link">Info</NuxtLink>
               </li>
             </ul>
           </div>
