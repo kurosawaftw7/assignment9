@@ -1,7 +1,6 @@
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
+    
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <NuxtLink to="/" class="nav-link">Jeff</NuxtLink>
@@ -11,17 +10,19 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <NuxtLink to="./pages/HomeView.vue" class="nav-link">Home</NuxtLink>
+                <NuxtLink to="/" class="nav-link">Home</NuxtLink>
               </li>
               <li class="nav-item">
-                <NuxtLink to="./pages/AboutView.vue" class="nav-link">About</NuxtLink>
+                <NuxtLink to="/about" class="nav-link">About</NuxtLink>
               </li>
               <li class="nav-item">
-                <NuxtLink to="./pages/InfoView.vue" class="nav-link">Info</NuxtLink>
+                <NuxtLink to="/info" class="nav-link">Info</NuxtLink>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-  </NuxtLayout>
+      <main>
+        <NuxtPage />
+      </main>
 </template>
