@@ -14,7 +14,7 @@
         {{ movie.Genre }}
         {{ movie.Year }}
         {{ movie.Runtime }}
-        {{ actor }}
+        {{ movie.actor }}
       </div>
     </div>
   </div>
@@ -22,11 +22,11 @@
 </template>
 
 <script>
-const url = 'https://moviesdatabase.p.rapidapi.com/actors/%7Bid%7D';
+const url = 'https://moviesdatabase.p.rapidapi.com/actors/nm0001536';
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+		'X-RapidAPI-Key': '8be9c0067dmsh6e89ffadb61885cp15da93jsn87bd1fdf7cf1',
 		'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
 	}
 };
