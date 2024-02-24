@@ -14,17 +14,31 @@
         {{ movie.Genre }}
         {{ movie.Year }}
         {{ movie.Runtime }}
+        {{ actor }}
       </div>
     </div>
   </div>
-
-
 </div>
-
-
 </template>
 
 <script>
+const url = 'https://moviesdatabase.p.rapidapi.com/actors/%7Bid%7D';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+		'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
+
 // array for movie info
 export default {
   data() {
