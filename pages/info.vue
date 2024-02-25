@@ -46,8 +46,8 @@ export default {
   data() {
     return {
       movies: [
-        {Title: 'The Seven Samurai', Genre: 'Genre: Epic Adventure', Year: 'Year of Release: 1954', Runtime: 'Runtime: 3 hours and 27 minutes'},
-        {Title: 'Ikiru', Genre: 'Genre: Humanist Drama', Year: 'Year of Release: 1952', Runtime: 'Runtime: 2 hours and 23 minutes'},
+        {Title: 'The Seven Samurai', Genre: 'Genre: Epic Adventure', Year: 'Year of Release: 1954', Runtime: 'Runtime: 3 hours and 27 minutes', Actor: result},
+        {Title: 'Ikiru', Genre: 'Genre: Humanist Drama', Year: 'Year of Release: 1952', Runtime: 'Runtime: 2 hours and 23 minutes', Actor: result},
         {Title: 'Ran', Genre: 'Genre: Epic Action', Year: 'Year of Release: 1985', Runtime: 'Runtime: 2 hours and 40 minutes', Actor: result},
     ] 
     };
