@@ -14,7 +14,7 @@
         {{ movie.Genre }}
         {{ movie.Year }}
         {{ movie.Runtime }}
-        {{ movie.actor }}
+        {{ movie.Actor }}
       </div>
     </div>
   </div>
@@ -31,9 +31,11 @@ const options = {
 	}
 };
 
+let result = 'none';
+
 try {
 	const response = await fetch(url, options);
-	const result = await response.text();
+	 result = await response.text();
 	console.log(result);
 } catch (error) {
 	console.error(error);
@@ -46,7 +48,7 @@ export default {
       movies: [
         {Title: 'The Seven Samurai', Genre: 'Genre: Epic Adventure', Year: 'Year of Release: 1954', Runtime: 'Runtime: 3 hours and 27 minutes'},
         {Title: 'Ikiru', Genre: 'Genre: Humanist Drama', Year: 'Year of Release: 1952', Runtime: 'Runtime: 2 hours and 23 minutes'},
-        {Title: 'Ran', Genre: 'Genre: Epic Action', Year: 'Year of Release: 1985', Runtime: 'Runtime: 2 hours and 40 minutes'},
+        {Title: 'Ran', Genre: 'Genre: Epic Action', Year: 'Year of Release: 1985', Runtime: 'Runtime: 2 hours and 40 minutes', Actor: result},
     ] 
     };
   },
