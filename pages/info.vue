@@ -14,7 +14,12 @@
         {{ movie.Genre }}
         {{ movie.Year }}
         {{ movie.Runtime }}
-        {{ movie.Actor }}
+        <!-- This needs to be wrapped in this if otherwise it may show an error since this data doesn't exist on pageload -->
+        <div v-if="actors.results">
+          <h4>Actor</h4>
+          <div>Name: {{ actors.results['primaryName'] }}</div>
+          <div>Born: {{ actors.results['birthYear'] }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -22,35 +27,41 @@
 </template>
 
 <script>
-const url = 'https://moviesdatabase.p.rapidapi.com/actors/nm0001536';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '8be9c0067dmsh6e89ffadb61885cp15da93jsn87bd1fdf7cf1',
-		'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-	}
-};
 
-let result = 'none';
 
-try {
-	const response = await fetch(url, options);
-	 result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
-
-// array for movie info
 export default {
   data() {
     return {
       movies: [
-        {Title: 'The Seven Samurai', Genre: 'Genre: Epic Adventure', Year: 'Year of Release: 1954', Runtime: 'Runtime: 3 hours and 27 minutes', Actor: result},
-        {Title: 'Ikiru', Genre: 'Genre: Humanist Drama', Year: 'Year of Release: 1952', Runtime: 'Runtime: 2 hours and 23 minutes', Actor: result},
-        {Title: 'Ran', Genre: 'Genre: Epic Action', Year: 'Year of Release: 1985', Runtime: 'Runtime: 2 hours and 40 minutes', Actor: result},
-    ] 
+        {Title: 'The Seven Samurai', Genre: 'Genre: Epic Adventure', Year: 'Year of Release: 1954', Runtime: 'Runtime: 3 hours and 27 minutes', Actor: 'test'},
+        {Title: 'Ikiru', Genre: 'Genre: Humanist Drama', Year: 'Year of Release: 1952', Runtime: 'Runtime: 2 hours and 23 minutes', Actor: 'test'},
+        {Title: 'Ran', Genre: 'Genre: Epic Action', Year: 'Year of Release: 1985', Runtime: 'Runtime: 2 hours and 40 minutes', Actor: 'test'},
+      ],
+      actors: []
     };
   },
+  methods: {
+    // Moved your api code into a function and made some small edits.
+    async getActorData(){
+      const url = 'https://moviesdatabase.p.rapidapi.com/actors/nm0001536';
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': '8be9c0067dmsh6e89ffadb61885cp15da93jsn87bd1fdf7cf1',
+          'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+        }
+      };
+
+      const data = await $fetch(url, options)
+      console.log('this the data: ' + JSON.stringify(data))
+      
+      // Set the return data value from the api the Vue actors data variable
+      this.actors = await data
+    }
+  },
+  mounted(){
+    // Run this function when the Vue instance is created
+    this.getActorData();
+  }
 };
 </script>
