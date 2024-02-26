@@ -1,6 +1,5 @@
+
 <template>
-  <NuxtLayout>
-    <NuxtPage />
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <NuxtLink to="/" class="nav-link">Jeff</NuxtLink>
@@ -22,5 +21,7 @@
           </div>
         </div>
       </nav>
-  </NuxtLayout>
+      <main>
+        <NuxtPage />
+      </main>
 </template>
