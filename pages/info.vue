@@ -1,4 +1,8 @@
 <template>
+        <Head>
+            <Title>Kurosawa Home Info Page</Title>
+                <Meta name="description" content="movies, classics, Japan"/>
+        </Head>
 <h1>This is the info page</h1>
 <div class="accordion" id="accordionExample">
   <div class="accordion-item" v-for="(movie, key) in movies" :key="key">
@@ -29,6 +33,18 @@
 <script>
 
 export default {
+
+  head: {
+    title: "Kurosawa Movie Info Page",
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+
+      // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+      { hid: 'description', name: 'Kurosawa Movie Info Page', content: 'movies, classics' }
+    ]
+  },
+
   data() {
     return {
       movies: [
