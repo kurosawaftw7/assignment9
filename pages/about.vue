@@ -1,5 +1,9 @@
 <template>
   <div class="about">
+    <Head>
+      <Title>Kurosawa Movie Page About Section</Title>
+      <Meta name="description" content="movies, classics, Japan"/>
+    </Head>
     <h1>This is the movie poster page</h1>
   </div>
   <div>
